@@ -92,16 +92,21 @@ void File_students::read_students(std::vector<Student> &students)
         {
             std::istringstream iss(line);
             Student student;
-            iss >> student.f_name >> student.l_name;
+            std::string temp;
+            iss >> temp;
+            student.set_f_name(temp);
+            iss >> temp;
+            student.set_l_name(temp);
+
             for (int i = 0; i < this->num_of_hw; i++)
             {
                 std::string grade;
                 iss >> grade;
-                student.hw_scores.push_back(stoi(grade));
+                student.push_hw_score(stoi(grade));
             }
             std::string exam_score;
             iss >> exam_score;
-            student.exam_score = stoi(exam_score);
+            student.set_exam_score(stoi(exam_score));
             students.push_back(student);
         }
     }

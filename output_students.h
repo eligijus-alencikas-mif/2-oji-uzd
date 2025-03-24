@@ -7,13 +7,15 @@
 #include <vector>
 
 #include "constant_definitions.h"
-#include "student_def.h"
+#include "student.h"
 
 struct Student;
 using std::cout;
 
-class Output_students {
+class Output_students
+{
     std::ofstream output;
+
 public:
     std::string error;
 
@@ -27,4 +29,4 @@ public:
     void output_terminal(std::vector<Student> const &students);
 };
 
-#endif //OUTPUT_STUDENTS_H
+#endif // OUTPUT_STUDENTS_H

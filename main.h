@@ -8,8 +8,8 @@
 #include "output_students.h"
 #include "students_calc.h"
 #include "process_settings.h"
-#include "student_def.h"
+#include "student.h"
 #include "timer.h"
 #include <limits>
 
-#endif //MAIN_H
+#endif // MAIN_H

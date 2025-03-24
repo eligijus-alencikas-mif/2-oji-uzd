@@ -6,7 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
-#include "student_def.h"
+#include "student.h"
 
 class File_students
 {

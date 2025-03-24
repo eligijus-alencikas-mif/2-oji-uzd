@@ -5,9 +5,10 @@
 #include <algorithm>
 
 #include "constant_definitions.h"
-#include "student_def.h"
+#include "student.h"
 
-class Calc_Students {
+class Calc_Students
+{
 public:
     static void calc_grades(std::vector<Student> &students);
     static void set_student_avg(Student &student);
@@ -19,5 +20,4 @@ public:
     static bool student_sort_med(Student const &lhs, Student const &rhs);
 };
 
-
-#endif //STUDENTS_CALC_H
+#endif // STUDENTS_CALC_H

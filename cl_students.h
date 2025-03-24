@@ -7,15 +7,14 @@
 
 #include "generator.h"
 #include "inputs.h"
-#include "student_def.h"
+#include "student.h"
 
 using std::cout;
 typedef std::numeric_limits<int> int_lim;
 
-class CL_Students {
+class CL_Students
+{
 public:
-    CL_Students();
-
     static std::vector<Student> get_user_input(const bool &generate_names, const bool &generate_grades);
     static void gen_names(Student &student);
     static void CL_names(Student &student, int students_size);
@@ -23,4 +22,4 @@ public:
     static void CL_grades(Student &student, int students_size);
 };
 
-#endif //CL_STUDENTS_H
+#endif // CL_STUDENTS_H

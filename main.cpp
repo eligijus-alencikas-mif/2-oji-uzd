@@ -103,7 +103,7 @@ int main()
     case 1:
         for (auto student : students)
         {
-            if (student.final_score_avg < 5.0)
+            if (student.get_final_score_avg() < 5.0)
             {
                 low_st.push_back(student);
             }
@@ -119,7 +119,7 @@ int main()
         for (size_t i = 0; i < students.size(); i++)
         {
             auto student = students[i];
-            if (student.final_score_avg < 5.0)
+            if (student.get_final_score_avg() < 5.0)
             {
                 low_st.push_back(student);
             }
@@ -133,8 +133,8 @@ int main()
     break;
     case 3:
         students.erase(std::remove_if(students.begin(), students.end(), [&](Student &student)
-                                      { 
-                                    if (student.final_score_avg < 5.0)
+                                      {
+                                    if (student.get_final_score_avg() < 5.0)
                                     {
                                         low_st.push_back(student);
                                         return true;

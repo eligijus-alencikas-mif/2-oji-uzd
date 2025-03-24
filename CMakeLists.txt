@@ -15,6 +15,8 @@ add_executable(1-oji-uzduotis
     read_students.cpp
     students_calc.cpp
     timer.cpp
+    student.cpp
+    inputs.cpp
 )
 
 # Include directories
