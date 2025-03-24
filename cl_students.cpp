@@ -24,7 +24,7 @@ std::vector<Student> CL_Students::get_user_input(const bool &generate_names, con
         {
             CL_grades(student, students.size());
         }
-
+        student.disallow_cval_mod();
         students.push_back(student);
 
         if (!CLInputs::numInput("Ar norite ivesti dar viena studenta? (1 - taip, 0 - ne): ", 1, 0))

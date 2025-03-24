@@ -107,6 +107,7 @@ void File_students::read_students(std::vector<Student> &students)
             std::string exam_score;
             iss >> exam_score;
             student.set_exam_score(stoi(exam_score));
+            student.disallow_cval_mod();
             students.push_back(student);
         }
     }

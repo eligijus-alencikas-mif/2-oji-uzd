@@ -47,19 +47,23 @@ double Student::get_final_score_med() const
 
 void Student::set_f_name(std::string f_name)
 {
-    this->f_name = f_name;
+    if (allow_cval_mod)
+        this->f_name = f_name;
 };
 void Student::set_l_name(std::string l_name)
 {
-    this->l_name = l_name;
+    if (allow_cval_mod)
+        this->l_name = l_name;
 };
 void Student::set_hw_scores(std::vector<int> hw_scores)
 {
-    this->hw_scores = hw_scores;
+    if (allow_cval_mod)
+        this->hw_scores = hw_scores;
 };
 void Student::set_exam_score(int exam_score)
 {
-    this->exam_score = exam_score;
+    if (allow_cval_mod)
+        this->exam_score = exam_score;
 };
 void Student::set_final_score_avg(double final_score_avg)
 {
@@ -71,5 +75,10 @@ void Student::set_final_score_med(double final_score_med)
 };
 void Student::push_hw_score(int hw_score)
 {
-    this->hw_scores.push_back(hw_score);
+    if (allow_cval_mod)
+        this->hw_scores.push_back(hw_score);
+};
+void Student::disallow_cval_mod()
+{
+    allow_cval_mod = false;
 };
