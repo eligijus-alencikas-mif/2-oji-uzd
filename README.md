@@ -424,7 +424,7 @@ Struktūros metodo bin dydis: 110.88 KiB
 
 
 Klasės metodo bin dydis: 117.92 KiB
-Struktūros metodo bin dydis: 
+Struktūros metodo bin dydis: 119.91 KiB
 
 ### Veikimo greitis -O3
 
