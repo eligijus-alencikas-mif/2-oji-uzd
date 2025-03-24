@@ -405,8 +405,9 @@ Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos 
 | (stud. sk.) Duom. tipas | Laikas 1 | Laikas 2 | Laikas 3 | Laikas 4 | Laikas 5 | Vidurkiai |
 |-------------------------|----------|----------|----------|----------|----------|-----------|
 | (1,000,000) Klasė       | 1562 ms  | 1619 ms  | 1616 ms  | 1630 ms  | 1593 ms  | 1604 ms   |
+| (1,000,000) Struktūra   | 1306 ms  | 1333 ms  | 1321 ms  | 1328 ms  | 1311 ms  | 1319 ms   |
 | (10,000,000) Klasė      | 17244 ms | 17597 ms | 17800 ms | 17520 ms | 17590 ms | 17550 ms  |
-
+| (10,000,000) Struktūra  | 13950 ms | 14018 ms | 14012 ms | 14125 ms | 14019 ms | 14024 ms  |
 
 Klasės metodo bin dydis: 1.49 MiB
 Struktūros metodo bin dydis:
