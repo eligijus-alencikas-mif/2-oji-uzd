@@ -417,7 +417,10 @@ Struktūros metodo bin dydis:
 | (stud. sk.) Duom. tipas | Laikas 1 | Laikas 2 | Laikas 3 | Laikas 4 | Laikas 5 | Vidurkiai |
 |-------------------------|----------|----------|----------|----------|----------|-----------|
 | (1,000,000) Klasė       | 1559 ms  | 1607 ms  | 1599 ms  | 1606 ms  | 1597 ms  | 1593 ms   |
+| (1,000,000) Struktūra   | 1443 ms  | 1338 ms  | 1337 ms  | 1359 ms  | 1358 ms  | 1367 ms   |
 | (10,000,000) Klasė      | 16920 ms | 17292 ms | 17082 ms | 17048 ms | 17276 ms | 17123 ms  |
+| (10,000,000) Struktūra  | 14104 ms | 14132 ms | 14284 ms | 14277 ms | 14272 ms | 14213 ms  |
+
 
 
 Klasės metodo bin dydis: 1.57 MiB
