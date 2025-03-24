@@ -409,7 +409,7 @@ Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos 
 | (10,000,000) Klasė      | 17244 ms | 17597 ms | 17800 ms | 17520 ms | 17590 ms | 17550 ms  |
 | (10,000,000) Struktūra  | 13950 ms | 14018 ms | 14012 ms | 14125 ms | 14019 ms | 14024 ms  |
 
-Klasės metodo bin dydis: 1.49 MiB
+Klasės metodo bin dydis: 107.94 KiB
 Struktūros metodo bin dydis:
 
 ### Veikimo greitis -O2
@@ -423,7 +423,7 @@ Struktūros metodo bin dydis:
 
 
 
-Klasės metodo bin dydis: 1.57 MiB
+Klasės metodo bin dydis: 117.92 KiB
 Struktūros metodo bin dydis:
 
 ### Veikimo greitis -O3
@@ -436,5 +436,5 @@ Struktūros metodo bin dydis:
 | (10,000,000) Struktūra  | 13311 ms | 13454 ms | 13388 ms | 13425 ms | 13332 ms | 13382 ms  |
 
 
-Klasės metodo bin dydis: 1.84 MiB
+Klasės metodo bin dydis: 129.52 KiB
 Struktūros metodo bin dydis:
