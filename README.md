@@ -399,6 +399,7 @@ Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos 
 * Matavimui naudajami tik 1,000,000 ir 10,000,000 studentų kiekiai
 * Matavimui bus lyginami -O1, -O2 ir -O3 kompiliavmo gairės (3 atvėjai, kodo veikimo greitis ir bin failo dydis)
 * Matuojamas pilnas programos veikimo laikas (neskaitant vartotojo įvesties)
+* Naudojamas vector tipo konteineris studentų masyui saugoti
 
 ### Veikimo greitis -O1
 
