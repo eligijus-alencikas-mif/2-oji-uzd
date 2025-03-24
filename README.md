@@ -133,7 +133,7 @@ Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos 
 | Išvedimas      | 2602 ms  | 2628 ms  | 2586 ms  | 2640 ms  | 2665 ms  | 2624 ms   |
 | Veikimo laikas | 8686 ms  | 8750 ms  | 8730 ms  | 8727 ms  | 8781 ms  | 8735 ms   |
 
-## Trečiasis tyrimas (Konteinerių testavimas)
+## Trečias tyrimas (Konteinerių testavimas)
 
 * Laiko matavimui naudoajam `chrono` biblioteka
 * Duomenys gaunaumi iš ankščiau sugeneruotų failų
@@ -389,3 +389,46 @@ Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos 
 | 10,000,000   | 465 ms   | 466 ms   | 467 ms   | 465 ms   | 468 ms   | 466 ms    |
 
 
+## Penktas tyrimas (Struct vs Class)
+
+* Laiko matavimui naudoajam `chrono` biblioteka
+* Duomenys gaunaumi iš ankščiau sugeneruotų failų
+* Kiekvienas studentas turi po 10 namų darbų rezultatų + egzaminas
+* Matavimai atliekami penkis kartus ir iš jų išgaunami vidurkiai
+* Matuojami du kodo atvėjai, Vienas naudojant Struktūras studentams kitas klases
+* Matavimui naudajami tik 1,000,000 ir 10,000,000 studentų kiekiai
+* Matavimui bus lyginami -O1, -O2 ir -O3 kompiliavmo gairės (3 atvėjai, kodo veikimo greitis ir bin failo dydis)
+* Matuojamas pilnas programos veikimo laikas (neskaitant vartotojo įvesties)
+
+### Veikimo greitis -O1
+
+| (stud. sk.) Duom. tipas | Laikas 1 | Laikas 2 | Laikas 3 | Laikas 4 | Laikas 5 | Vidurkiai |
+|-------------------------|----------|----------|----------|----------|----------|-----------|
+| (1,000,000) Klasė       | 1562 ms  | 1619 ms  | 1616 ms  | 1630 ms  | 1593 ms  | 1604 ms   |
+| (10,000,000) Klasė      | 17244 ms | 17597 ms | 17800 ms | 17520 ms | 17590 ms | 17550 ms  |
+
+
+Klasės metodo bin dydis: 1.49 MiB
+Struktūros metodo bin dydis:
+
+### Veikimo greitis -O2
+
+| (stud. sk.) Duom. tipas | Laikas 1 | Laikas 2 | Laikas 3 | Laikas 4 | Laikas 5 | Vidurkiai |
+|-------------------------|----------|----------|----------|----------|----------|-----------|
+| (1,000,000) Klasė       | 1559 ms  | 1607 ms  | 1599 ms  | 1606 ms  | 1597 ms  | 1593 ms   |
+| (10,000,000) Klasė      | 16920 ms | 17292 ms | 17082 ms | 17048 ms | 17276 ms | 17123 ms  |
+
+
+Klasės metodo bin dydis: 1.57 MiB
+Struktūros metodo bin dydis:
+
+### Veikimo greitis -O3
+
+| (stud. sk.) Duom. tipas | Laikas 1 | Laikas 2 | Laikas 3 | Laikas 4 | Laikas 5 | Vidurkiai |
+|-------------------------|----------|----------|----------|----------|----------|-----------|
+| (1,000,000) Klasė       | 1569 ms  | 1556 ms  | 1550 ms  | 1551 ms  | 1572 ms  | 1559 ms   |
+| (10,000,000) Klasė      | 16396 ms | 16528 ms | 16528 ms | 16639 ms | 16589 ms | 16536 ms  |
+
+
+Klasės metodo bin dydis: 1.84 MiB
+Struktūros metodo bin dydis:

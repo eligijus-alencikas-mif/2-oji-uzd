@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.10)
-project(1-oji-uzduotis)
+project(2-oji-uzd)
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "-O3")
 
 # Add the executable
-add_executable(1-oji-uzduotis
+add_executable(2-oji-uzd
     main.cpp
     cl_students.cpp
     file_gen.cpp
@@ -20,6 +20,6 @@ add_executable(1-oji-uzduotis
 )
 
 # Include directories
-target_include_directories(1-oji-uzduotis PRIVATE
+target_include_directories(2-oji-uzd PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
 )

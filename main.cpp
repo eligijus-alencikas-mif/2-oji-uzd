@@ -5,7 +5,7 @@ typedef std::numeric_limits<int> int_lim;
 int main()
 {
     Timer t;
-    std::string watch_name = "Skirstymas";
+    std::string watch_name = "NAME";
     t.initialize_watch(1, watch_name);
 
     Process_settings settings{};
@@ -51,7 +51,6 @@ int main()
         return 0;
     }
 
-    std::vector<Student> students;
     File_students file;
 
     if (settings.get_students_from_file)
@@ -71,6 +70,10 @@ int main()
     settings.distribution_strategy = CLInputs::numInput(
         "Pasirinkite skirstymo strategija (1 - Skirstymas į du naujus konteinerius, 2 - Skirstmas panaudojant tik vieną naują konteinerį, 3 - Skirstymas įtraukiant \"efektyvaus\" darbo su konteineriais metodus): ",
         3, 1);
+
+    t.start_watch(1);
+
+    std::vector<Student> students;
 
     if (settings.get_students_from_file)
     {
@@ -97,7 +100,6 @@ int main()
     if (settings.output_to_file)
         output.close_file();
 
-    t.start_watch(1);
     switch (settings.distribution_strategy)
     {
     case 1:
@@ -143,7 +145,6 @@ int main()
                        students.end());
         break;
     }
-    t.pause_watch(1);
 
     output.open_file("nuskriaustukai.txt");
     output.output_students(low_st, true);
@@ -158,6 +159,7 @@ int main()
     output.close_file();
     students.clear();
 
+    t.pause_watch(1);
     t.write_times("laikai.txt");
     return 0;
 }
