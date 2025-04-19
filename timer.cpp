@@ -55,7 +55,15 @@ int Stopwatch::get_id() const
 // --------------------------------------------------------------------------------
 // Timer
 
-void Timer::initialize_watch(const int watch_id, std::string &watch_name)
+Timer::~Timer()
+{
+    if (!times_written)
+    {
+        write_times("laikai.txt");
+    }
+}
+
+void Timer::initialize_watch(const int watch_id, std::string watch_name)
 {
     watches.emplace_back(watch_id, watch_name);
 }
@@ -120,12 +128,13 @@ void Timer::write_to_file(const std::string &filename) const
     log_file.close();
 }
 
-void Timer::write_times(const std::string &filename) const
+void Timer::write_times(const std::string &filename)
 {
     std::ofstream log_file(filename);
     for (const auto &watch : watches)
     {
-        log_file << watch.get_time_elapsed() << " ";
+        log_file << watch.get_name() << ": " << (double)watch.get_time_elapsed() / 1000 << " sek.\n";
     }
     log_file.close();
+    this->times_written = true;
 }

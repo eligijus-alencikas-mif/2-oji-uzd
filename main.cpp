@@ -5,8 +5,6 @@ typedef std::numeric_limits<int> int_lim;
 int main()
 {
     Timer t;
-    std::string watch_name = "NAME";
-    t.initialize_watch(1, watch_name);
 
     Process_settings settings{};
 
@@ -46,7 +44,10 @@ int main()
         int hw_num = CLInputs::numInput("Iveskite sugeneruot failo namu darbu skaiciu: ", int_lim::max(), 1);
         std::string file_name = CLInputs::strInput("Iveskite sugeneruoto failo pavadinima: ");
 
+        t.initialize_watch(2, "Failo kurimo laikas");
+        t.start_watch(2);
         FileGen::gen_file(student_num, hw_num, file_name);
+        t.pause_watch(2);
         cout << "Baigtas failo kurimas\n";
         return 0;
     }
@@ -71,13 +72,17 @@ int main()
         "Pasirinkite skirstymo strategija (1 - Skirstymas į du naujus konteinerius, 2 - Skirstmas panaudojant tik vieną naują konteinerį, 3 - Skirstymas įtraukiant \"efektyvaus\" darbo su konteineriais metodus): ",
         3, 1);
 
+    t.initialize_watch(1, "Pilnas veikimo laikas");
     t.start_watch(1);
 
     std::vector<Student> students;
 
     if (settings.get_students_from_file)
     {
+        t.initialize_watch(3, "Nuskaitymo is failo laikas");
+        t.start_watch(3);
         file.read_students(students);
+        t.pause_watch(3);
     }
     else
     {
@@ -86,8 +91,14 @@ int main()
             settings.generate_grades);
     }
 
+    t.initialize_watch(4, "Pazymiu skaiciavimo laikas");
+    t.start_watch(4);
     Calc_Students::calc_grades(students);
+    t.pause_watch(4);
+    t.initialize_watch(5, "Pazymiu rusiavimo laikas");
+    t.start_watch(5);
     Calc_Students::sort_students(students, settings.sort_method);
+    t.pause_watch(5);
 
     std::vector<Student> low_st;
     std::vector<Student> high_st;
@@ -100,6 +111,8 @@ int main()
     if (settings.output_to_file)
         output.close_file();
 
+    t.initialize_watch(6, "Studentu skirstymo laikas");
+    t.start_watch(6);
     switch (settings.distribution_strategy)
     {
     case 1:
@@ -145,7 +158,10 @@ int main()
                        students.end());
         break;
     }
+    t.pause_watch(6);
 
+    t.initialize_watch(7, "Studentu isvedimo laikas");
+    t.start_watch(7);
     output.open_file("nuskriaustukai.txt");
     output.output_students(low_st, true);
     output.close_file();
@@ -158,6 +174,7 @@ int main()
         output.output_students(students, true);
     output.close_file();
     students.clear();
+    t.pause_watch(7);
 
     t.pause_watch(1);
     t.write_times("laikai.txt");

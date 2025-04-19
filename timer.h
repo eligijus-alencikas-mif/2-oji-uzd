@@ -25,6 +25,7 @@ public:
     long stopwatch_stop();
     long get_time_elapsed() const;
     long clear_time_elapsed();
+    std::string get_name() const { return name; }
 
     int get_id() const;
 };
@@ -33,15 +34,18 @@ class Timer
 {
     std::string content;
     std::vector<Stopwatch> watches;
+    bool times_written = false;
 
 public:
-    void initialize_watch(int watch_id, std::string &watch_name);
+    ~Timer();
+
+    void initialize_watch(int watch_id, std::string watch_name);
     bool start_watch(int watch_id);
     bool pause_watch(int watch_id);
     bool stop_watch(int watch_id, std::string msg);
     long get_time_elapsed(int watch_id) const;
     void write_to_file(const std::string &filename) const;
-    void write_times(const std::string &filename) const;
+    void write_times(const std::string &filename);
 };
 
 #endif // TIMER_H
