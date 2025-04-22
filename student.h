@@ -16,6 +16,9 @@ private:
 public:
     Student(std::string f_name = "", std::string l_name = "", std::vector<int> hw_scores = {}, int exam_score = 0);
     ~Student();
+    Student(const Student &other);
+
+    Student &operator=(const Student &other);
 
     std::string get_f_name() const;
     std::string get_l_name() const;
