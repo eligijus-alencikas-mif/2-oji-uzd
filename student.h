@@ -19,6 +19,7 @@ public:
     Student(const Student &other);
 
     Student &operator=(const Student &other);
+    Student (Student &&other) noexcept; 
 
     std::string get_f_name() const;
     std::string get_l_name() const;
