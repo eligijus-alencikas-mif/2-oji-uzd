@@ -55,7 +55,21 @@ Student::Student(Student &&other) noexcept
     this->allow_cval_mod = other.allow_cval_mod;
 };
 
-
+// Move assignment operator
+Student &Student::operator=(Student &&other) noexcept
+{
+    if (this != &other) // self-assignment check
+    {
+        this->f_name = std::move(other.f_name);
+        this->l_name = std::move(other.l_name);
+        this->hw_scores = std::move(other.hw_scores);
+        this->exam_score = other.exam_score;
+        this->final_score_avg = other.final_score_avg;
+        this->final_score_med = other.final_score_med;
+        this->allow_cval_mod = other.allow_cval_mod;
+    }
+    return *this;
+};
 
 std::string Student::get_f_name() const
 {
