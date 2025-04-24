@@ -1,5 +1,4 @@
 #include "student_test.h"
-#include <iostream>
 
 bool StudentTest::test_destructor()
 {
@@ -57,8 +56,10 @@ bool StudentTest::test_move_constructor()
 
 bool StudentTest::test_move_assignment_operator()
 {
-    Student original("John", "Doe", {90, 85, 80}, 95);
-    Student moved("Jane", "Smith", {70, 75, 80}, 85); // Different data
+    Student original("John", "Doe", {9, 8, 5}, 3);
+    Calc_Students::set_student_avg(original);
+    Calc_Students::set_student_median(original);
+    Student moved("Jane", "Smith", {4, 1, 3}, 10); // Different data
 
     moved = std::move(original); // Move assignment operator should be called here
 
@@ -68,10 +69,10 @@ bool StudentTest::test_move_assignment_operator()
     // Check if the moved object has the same data as the original
     return (moved.get_f_name() == "John" &&
             moved.get_l_name() == "Doe" &&
-            moved.get_hw_scores() == std::vector<int>{90, 85, 80} &&
-            moved.get_exam_score() == 95 &&
-            moved.get_final_score_avg() == 90 &&
-            moved.get_final_score_med() == 85);
+            moved.get_hw_scores() == std::vector<int>{9, 8, 5} &&
+            moved.get_exam_score() == 3 &&
+            moved.get_final_score_avg() == Calc_Students::calc_average(std::vector<int>{9, 8, 5}, 3) &&
+            moved.get_final_score_med() == 6.5);
 }
 
 bool StudentTest::test_all()
