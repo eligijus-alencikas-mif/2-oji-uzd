@@ -10,6 +10,7 @@
 #include "process_settings.h"
 #include "student.h"
 #include "timer.h"
+#include "student_test.h"
 #include <limits>
 
 #endif // MAIN_H

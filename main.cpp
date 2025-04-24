@@ -11,8 +11,8 @@ int main()
     srand(time(nullptr));
 
     int choice = CLInputs::numInput(
-        "Pasirinkte duomenu generavimo metoda (1 - Ranka, 2 - Generuoti pazymius, 3 - Generuoti ir pazymius ir studentu vardus, pavardes, 4 - Skaityti is failo, 5 - Generuoti faila, 6 - Baigti darba): ",
-        6, 1);
+        "Pasirinkte duomenu generavimo metoda (1 - Ranka, 2 - Generuoti pazymius, 3 - Generuoti ir pazymius ir studentu vardus, pavardes, 4 - Skaityti is failo, 5 - Generuoti faila, 6 - Baigti darba, 7 - Testuoti Studento klase): ",
+        7, 1);
 
     switch (choice)
     {
@@ -34,6 +34,9 @@ int main()
     case 5:
         settings.generate_input_file = true;
         break;
+    case 7:
+        cout << StudentTest::test_move_constructor() << std::endl;
+        return 0;
     default:
         return 0;
     }

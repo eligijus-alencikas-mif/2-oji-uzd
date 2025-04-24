@@ -17,6 +17,7 @@ add_executable(2-oji-uzd
     timer.cpp
     student.cpp
     inputs.cpp
+    student_test.cpp
 )
 
 # Include directories

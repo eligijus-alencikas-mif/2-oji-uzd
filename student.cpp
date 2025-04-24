@@ -13,6 +13,10 @@ Student::~Student()
     this->f_name.clear();
     this->l_name.clear();
     this->hw_scores.clear();
+    this->exam_score = 0;
+    this->final_score_avg = 0.0;
+    this->final_score_med = 0.0;
+    this->allow_cval_mod = true;
 };
 
 // Copy constructor
