@@ -2,6 +2,7 @@
 #define STUDENT_TEST_H
 
 #include "student.h"
+#include "students_calc.h"
 
 class StudentTest
 {

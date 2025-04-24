@@ -17,16 +17,21 @@ void Calc_Students::set_student_avg(Student &student)
         return;
     }
 
+    student.set_final_score_avg(calc_average(student.get_hw_scores(), student.get_exam_score()));
+}
+
+double Calc_Students::calc_average(std::vector<int> &&scores, int &&egzam)
+{
     double hw_sum = 0;
     double hw_avg = 0;
 
-    for (const int hw_score : student.get_hw_scores())
+    for (const int hw_score : scores)
     {
         hw_sum += hw_score;
     }
 
-    hw_avg = hw_sum / static_cast<double>(student.get_hw_scores().size());
-    student.set_final_score_avg(HW_WEIGHT * hw_avg + EXAM_WEIGHT * static_cast<double>(student.get_exam_score()));
+    hw_avg = hw_sum / static_cast<double>(scores.size());
+    return (HW_WEIGHT * hw_avg + EXAM_WEIGHT * static_cast<double>(egzam));
 }
 
 void Calc_Students::set_student_median(Student &student)

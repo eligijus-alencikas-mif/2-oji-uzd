@@ -18,6 +18,7 @@ public:
     static bool student_sort_l_name(Student const &lhs, Student const &rhs);
     static bool student_sort_avg(Student const &lhs, Student const &rhs);
     static bool student_sort_med(Student const &lhs, Student const &rhs);
+    static double calc_average(std::vector<int> &&scores, int &&egzam);
 };
 
 #endif // STUDENTS_CALC_H
