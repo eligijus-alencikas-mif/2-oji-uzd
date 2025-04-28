@@ -5,9 +5,10 @@
 
 class Person
 {
-    public:
+    protected:
     std::string f_name, l_name;
 
+    public:
     Person(std::string f_name, std::string l_name) : f_name(f_name), l_name(l_name) {};
     Person() : f_name(""), l_name("") {};
     ~Person() {
