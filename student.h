@@ -16,7 +16,8 @@ private:
     bool allow_cval_mod = true;
 
 public:
-    Student(std::string f_name = "", std::string l_name = "", std::vector<int> hw_scores = {}, int exam_score = 0);
+    Student(std::string f_name = "", std::string l_name = "", std::vector<int> hw_scores = {}, int exam_score = 0) : Person(f_name, l_name), hw_scores(hw_scores), exam_score(exam_score) {};
+    
     ~Student();
     Student(const Student &other);
 

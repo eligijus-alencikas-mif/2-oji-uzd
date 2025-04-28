@@ -1,17 +1,7 @@
 #include "student.h"
 
-Student::Student(std::string f_name, std::string l_name, std::vector<int> hw_scores, int exam_score)
-{
-    this->f_name = f_name;
-    this->l_name = l_name;
-    this->hw_scores = hw_scores;
-    this->exam_score = exam_score;
-};
-
 Student::~Student()
 {
-    this->f_name.clear();
-    this->l_name.clear();
     this->hw_scores.clear();
     this->exam_score = 0;
     this->final_score_avg = 0.0;
