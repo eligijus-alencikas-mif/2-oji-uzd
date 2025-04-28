@@ -75,15 +75,15 @@ Student &Student::operator=(Student &&other) noexcept
     return *this;
 };
 
-std::string Student::get_f_name() const
-{
-    return f_name;
-};
+// std::string Student::get_f_name() const
+// {
+//     return f_name;
+// };
 
-std::string Student::get_l_name() const
-{
-    return l_name;
-};
+// std::string Student::get_l_name() const
+// {
+//     return l_name;
+// };
 
 std::vector<int> Student::get_hw_scores() const
 {
@@ -105,16 +105,16 @@ double Student::get_final_score_med() const
     return final_score_med;
 };
 
-void Student::set_f_name(std::string f_name)
-{
-    if (allow_cval_mod)
-        this->f_name = f_name;
-};
-void Student::set_l_name(std::string l_name)
-{
-    if (allow_cval_mod)
-        this->l_name = l_name;
-};
+// void Student::set_f_name(std::string f_name)
+// {
+//     if (allow_cval_mod)
+//         this->f_name = f_name;
+// };
+// void Student::set_l_name(std::string l_name)
+// {
+//     if (allow_cval_mod)
+//         this->l_name = l_name;
+// };
 void Student::set_hw_scores(std::vector<int> hw_scores)
 {
     if (allow_cval_mod)
