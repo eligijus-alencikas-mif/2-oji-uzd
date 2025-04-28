@@ -35,8 +35,11 @@ int main()
         settings.generate_input_file = true;
         break;
     case 7:
-        cout << StudentTest::test_move_assignment_operator() << std::endl;
-        return 0;
+        {
+            auto result = StudentTest::test_all();
+            std::cout << std::get<1>(result);
+        }   
+    return 0;
     default:
         return 0;
     }

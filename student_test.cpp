@@ -75,12 +75,46 @@ bool StudentTest::test_move_assignment_operator()
             moved.get_final_score_med() == 6.5);
 }
 
-bool StudentTest::test_all()
+std::tuple<bool, std::string> StudentTest::test_all()
 {
-    return test_destructor() &&
-           test_copy_constructor() &&
-           test_copy_assignment_operator() &&
-           test_move_constructor() &&
-           test_move_assignment_operator();
+    std::tuple<bool, std::string> result = {true, ""};
+
+    if(test_destructor())
+    {
+        std::get<1>(result) += "Destructor test passed.\n";
+    }else{
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Destructor test failed.\n";
+    }
+    if(test_copy_constructor())
+    {
+        std::get<1>(result) += "Copy constructor test passed.\n";
+    }else{
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Copy constructor test failed.\n";
+    }
+    if(test_copy_assignment_operator())
+    {
+        std::get<1>(result) += "Copy assignment operator test passed.\n";
+    }else{
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Copy assignment operator test failed.\n";
+    }
+    if(test_move_constructor())
+    {
+        std::get<1>(result) += "Move constructor test passed.\n";
+    }else{
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Move constructor test failed.\n";
+    }
+    if(test_move_assignment_operator())
+    {
+        std::get<1>(result) += "Move assignment operator test passed.\n";
+    }else{
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Move assignment operator test failed.\n";
+    }
+
+    return result;
 }
 

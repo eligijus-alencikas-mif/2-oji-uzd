@@ -3,6 +3,8 @@
 
 #include "student.h"
 #include "students_calc.h"
+#include <tuple>
+#include <string>
 
 class StudentTest
 {
@@ -12,7 +14,7 @@ class StudentTest
     static bool test_copy_assignment_operator();
     static bool test_move_constructor();
     static bool test_move_assignment_operator();
-    static bool test_all();
+    static std::tuple<bool, std::string> test_all();
 };
 
 #endif // STUDENT_TEST_H
