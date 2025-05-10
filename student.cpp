@@ -1,6 +1,5 @@
 #include "student.h"
-#include <limits>
-#include <string.h>
+
 Student::Student(std::string f_name, std::string l_name, std::vector<int> hw_scores, int exam_score)
 {
     this->f_name = f_name;
@@ -79,10 +78,10 @@ Student &Student::operator=(Student &&other) noexcept
 std::ostream &operator<<(std::ostream &os, const Student &student)
 {
     os << student.get_f_name() << " " << student.get_l_name() << "\n";
-    os << "Namu darbu rezultatai: ";
+    os << "Namu darbu rezultatai:";
     for (const auto &score : student.get_hw_scores())
     {
-        os << score << " ";
+        os << " " << score;
     }
     os << "\n";
     os << "Egzamino rezultatas: " << student.get_exam_score() << "\n";
@@ -113,13 +112,13 @@ std::istream &operator>>(std::istream &is, Student &student)
     student.set_hw_scores(hw_scores);
 
     is.clear();
-    is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    is.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
 
     is >> exam_score;
 
     if (exam_score < 0 || exam_score > GRADE_MAX)
     {
-        throw std::invalid_argument("Egzamino rezultatas turi buti tarp 0 ir " + std::to_string(GRADE_MAX));
+        throw std::invalid_argument("Pazimys turi buti tarp 0 ir " + std::to_string(GRADE_MAX));
         return is;
     }
 

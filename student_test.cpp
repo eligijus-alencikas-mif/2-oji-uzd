@@ -72,6 +72,29 @@ bool StudentTest::test_move_assignment_operator()
             moved.get_final_score_med() == 6.5);
 }
 
+bool StudentTest::test_input_operator()
+{
+    std::istringstream input("John Doe 9 8 5 -1 3");
+    Student student;
+    input >> student;
+
+    // Check if the student object has the expected data
+    return (student.get_f_name() == "John" &&
+            student.get_l_name() == "Doe" &&
+            student.get_hw_scores() == std::vector<int>{9, 8, 5} &&
+            student.get_exam_score() == 3);
+}
+
+bool StudentTest::test_output_operator()
+{
+    Student student("John", "Doe", {9, 8, 5}, 3);
+    std::ostringstream output;
+    output << student;
+    // Check if the output string matches the expected format
+    std::string expected_output = "John Doe\nNamu darbu rezultatai: 9 8 5\nEgzamino rezultatas: 3\nGalutinis balas (Vidurkis): 0\nGalutinis balas (Mediana): 0\n";
+    return (output.str() == expected_output);
+}
+
 std::tuple<bool, std::string> StudentTest::test_all()
 {
     std::tuple<bool, std::string> result = {true, ""};
@@ -120,6 +143,24 @@ std::tuple<bool, std::string> StudentTest::test_all()
     {
         std::get<0>(result) = false;
         std::get<1>(result) += "Move assignment operator test failed.\n";
+    }
+    if (test_input_operator())
+    {
+        std::get<1>(result) += "Input operator test passed.\n";
+    }
+    else
+    {
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Input operator test failed.\n";
+    }
+    if (test_output_operator())
+    {
+        std::get<1>(result) += "Output operator test passed.\n";
+    }
+    else
+    {
+        std::get<0>(result) = false;
+        std::get<1>(result) += "Output operator test failed.\n";
     }
 
     return result;
