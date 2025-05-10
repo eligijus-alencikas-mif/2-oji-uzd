@@ -35,11 +35,11 @@ int main()
         settings.generate_input_file = true;
         break;
     case 7:
-        {
-            auto result = StudentTest::test_all();
-            std::cout << std::get<1>(result);
-        }   
-    return 0;
+    {
+        auto result = StudentTest::test_all();
+        std::cout << std::get<1>(result);
+    }
+        return 0;
     default:
         return 0;
     }

@@ -1,7 +1,10 @@
 #ifndef STUDENT_H
 #define STUDENT_H
+
+#include "constant_definitions.h"
 #include <vector>
 #include <string>
+#include <iostream>
 
 class Student
 {
@@ -19,8 +22,11 @@ public:
     Student(const Student &other);
 
     Student &operator=(const Student &other);
-    Student (Student &&other) noexcept; 
+    Student(Student &&other) noexcept;
     Student &operator=(Student &&other) noexcept;
+
+    friend std::ostream &operator<<(std::ostream &os, const Student &student);
+    friend std::istream &operator>>(std::istream &is, Student &student);
 
     std::string get_f_name() const;
     std::string get_l_name() const;
