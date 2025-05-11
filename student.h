@@ -13,7 +13,6 @@
 class Student : public Person
 {
 private:
-    // std::string f_name, l_name;
     std::vector<int> hw_scores;
     int exam_score{};
     double final_score_avg{};
@@ -33,8 +32,6 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Student &student);
     friend std::istream &operator>>(std::istream &is, Student &student);
 
-    // std::string get_f_name() const;
-    // std::string get_l_name() const;
     std::vector<int> get_hw_scores() const;
     int get_exam_score() const;
     double get_final_score_avg() const;
