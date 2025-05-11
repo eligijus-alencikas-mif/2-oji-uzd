@@ -1,0 +1,56 @@
+\doxysection{timer.\+h}
+\hypertarget{timer_8h_source}{}\label{timer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TIMER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TIMER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }accuracy\ =\ std::chrono::milliseconds;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }Stopwatch}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ std::chrono::time\_point<std::chrono::high\_resolution\_clock>\ start\{\};}
+\DoxyCodeLine{00014\ \ \ \ \ std::chrono::time\_point<std::chrono::high\_resolution\_clock>\ end\{\};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{long}\ time\_elapsed\ =\ 0;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ stopped\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{explicit}\ Stopwatch(\textcolor{keywordtype}{int}\ \_id,\ std::string\ \_name);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ stopwatch\_start();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ stopwatch\_pause();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{long}\ stopwatch\_stop();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{long}\ get\_time\_elapsed()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{long}\ clear\_time\_elapsed();}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ get\_name()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_id()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTimer}{Timer}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ content;}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<Stopwatch>\ watches;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ times\_written\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classTimer}{\string~Timer}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ initialize\_watch(\textcolor{keywordtype}{int}\ watch\_id,\ std::string\ watch\_name);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ start\_watch(\textcolor{keywordtype}{int}\ watch\_id);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ pause\_watch(\textcolor{keywordtype}{int}\ watch\_id);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ stop\_watch(\textcolor{keywordtype}{int}\ watch\_id,\ std::string\ msg);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{long}\ get\_time\_elapsed(\textcolor{keywordtype}{int}\ watch\_id)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ write\_to\_file(\textcolor{keyword}{const}\ std::string\ \&filename)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ write\_times(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TIMER\_H}}
+
+\end{DoxyCode}

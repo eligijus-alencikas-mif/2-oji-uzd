@@ -1,0 +1,107 @@
+\doxysection{Student Class Reference}
+\hypertarget{classStudent}{}\label{classStudent}\index{Student@{Student}}
+Inheritance diagram for Student\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStudent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classStudent_a3ff0c642ca45cb1ed7ab4396a5db6674}\label{classStudent_a3ff0c642ca45cb1ed7ab4396a5db6674} 
+{\bfseries Student} (std\+::string f\+\_\+name="{}"{}, std\+::string l\+\_\+name="{}"{}, std\+::vector$<$ int $>$ hw\+\_\+scores=\{\}, int exam\+\_\+score=0)
+\item 
+\Hypertarget{classStudent_a05b37ffb050ddb039db63a8764d790cb}\label{classStudent_a05b37ffb050ddb039db63a8764d790cb} 
+{\bfseries Student} (const \mbox{\hyperlink{classStudent}{Student}} \&other)
+\item 
+\Hypertarget{classStudent_ad05dd6148523a2a8b38128b60297b52a}\label{classStudent_ad05dd6148523a2a8b38128b60297b52a} 
+\mbox{\hyperlink{classStudent}{Student}} \& {\bfseries operator=} (const \mbox{\hyperlink{classStudent}{Student}} \&other)
+\item 
+\Hypertarget{classStudent_a154f8e92f220eff931891d336ebed0be}\label{classStudent_a154f8e92f220eff931891d336ebed0be} 
+{\bfseries Student} (\mbox{\hyperlink{classStudent}{Student}} \&\&other) noexcept
+\item 
+\Hypertarget{classStudent_a458365d8621d8e49e17ed809a272feeb}\label{classStudent_a458365d8621d8e49e17ed809a272feeb} 
+\mbox{\hyperlink{classStudent}{Student}} \& {\bfseries operator=} (\mbox{\hyperlink{classStudent}{Student}} \&\&other) noexcept
+\item 
+\Hypertarget{classStudent_a388f7631510b240c6137b5e18ddf2ef7}\label{classStudent_a388f7631510b240c6137b5e18ddf2ef7} 
+std\+::vector$<$ int $>$ {\bfseries get\+\_\+hw\+\_\+scores} () const
+\item 
+\Hypertarget{classStudent_a552d55afaae3b1afba7baabb48c75d5e}\label{classStudent_a552d55afaae3b1afba7baabb48c75d5e} 
+int {\bfseries get\+\_\+exam\+\_\+score} () const
+\item 
+\Hypertarget{classStudent_a2bbe17a249b56f49575ee178f1508835}\label{classStudent_a2bbe17a249b56f49575ee178f1508835} 
+double {\bfseries get\+\_\+final\+\_\+score\+\_\+avg} () const
+\item 
+\Hypertarget{classStudent_a38eb165024d7d5d284608da286461a4d}\label{classStudent_a38eb165024d7d5d284608da286461a4d} 
+double {\bfseries get\+\_\+final\+\_\+score\+\_\+med} () const
+\item 
+\Hypertarget{classStudent_a76bed6897c98c9561348b6e5c09d7ed7}\label{classStudent_a76bed6897c98c9561348b6e5c09d7ed7} 
+void {\bfseries set\+\_\+hw\+\_\+scores} (std\+::vector$<$ int $>$ hw\+\_\+scores)
+\item 
+\Hypertarget{classStudent_a0ef7b047b25ced6e399eb13767b70862}\label{classStudent_a0ef7b047b25ced6e399eb13767b70862} 
+void {\bfseries set\+\_\+exam\+\_\+score} (int exam\+\_\+score)
+\item 
+\Hypertarget{classStudent_a769a7aee1753ca6704d4fc53e11db1d1}\label{classStudent_a769a7aee1753ca6704d4fc53e11db1d1} 
+void {\bfseries set\+\_\+final\+\_\+score\+\_\+avg} (double final\+\_\+score\+\_\+avg)
+\item 
+\Hypertarget{classStudent_a258e8c5a89b6ca32e3aaf6b0e195346b}\label{classStudent_a258e8c5a89b6ca32e3aaf6b0e195346b} 
+void {\bfseries set\+\_\+final\+\_\+score\+\_\+med} (double final\+\_\+score\+\_\+med)
+\item 
+\Hypertarget{classStudent_ad8b644796fb761be1eb3f849db1a5a27}\label{classStudent_ad8b644796fb761be1eb3f849db1a5a27} 
+void {\bfseries push\+\_\+hw\+\_\+score} (int hw\+\_\+score)
+\item 
+\Hypertarget{classStudent_aa36cbd4bd1676b2c84195f75c217d566}\label{classStudent_aa36cbd4bd1676b2c84195f75c217d566} 
+void {\bfseries disallow\+\_\+cval\+\_\+mod} ()
+\item 
+std\+::string \mbox{\hyperlink{classStudent_aa4da19d1e4a2acad8024afdcde781c6e}{get\+\_\+full\+\_\+name}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPerson}{Person}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Person} (std\+::string f\+\_\+name, std\+::string l\+\_\+name)
+\item 
+std\+::string {\bfseries get\+\_\+f\+\_\+name} () const
+\item 
+std\+::string {\bfseries get\+\_\+l\+\_\+name} () const
+\item 
+void {\bfseries set\+\_\+f\+\_\+name} (std\+::string f\+\_\+name)
+\item 
+void {\bfseries set\+\_\+l\+\_\+name} (std\+::string l\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classStudent_a3927a6e81bf7a6bbb4a2322f13f4ac0e}\label{classStudent_a3927a6e81bf7a6bbb4a2322f13f4ac0e} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, const \mbox{\hyperlink{classStudent}{Student}} \&student)
+\item 
+\Hypertarget{classStudent_a32b1c2a3e1ebcfea4bc12270cb8bca98}\label{classStudent_a32b1c2a3e1ebcfea4bc12270cb8bca98} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&is, \mbox{\hyperlink{classStudent}{Student}} \&student)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classPerson}{Person}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries f\+\_\+name}
+\item 
+std\+::string {\bfseries l\+\_\+name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStudent_aa4da19d1e4a2acad8024afdcde781c6e}\index{Student@{Student}!get\_full\_name@{get\_full\_name}}
+\index{get\_full\_name@{get\_full\_name}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_full\_name()}{get\_full\_name()}}
+{\footnotesize\ttfamily \label{classStudent_aa4da19d1e4a2acad8024afdcde781c6e} 
+std\+::string Student\+::get\+\_\+full\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPerson}{Person}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+student.\+h\item 
+student.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\doxysection{student.\+h}
+\hypertarget{student_8h_source}{}\label{student_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}person.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}constant\_definitions.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }Student\ :\ \textcolor{keyword}{public}\ Person}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ std::vector<int>\ hw\_scores;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ exam\_score\{\};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{double}\ final\_score\_avg\{\};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ final\_score\_med\{\};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ allow\_cval\_mod\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ Student(std::string\ f\_name\ =\ \textcolor{stringliteral}{"{}"{}},\ std::string\ l\_name\ =\ \textcolor{stringliteral}{"{}"{}},\ std::vector<int>\ hw\_scores\ =\ \{\},\ \textcolor{keywordtype}{int}\ exam\_score\ =\ 0)\ :\ Person(f\_name,\ l\_name),\ hw\_scores(hw\_scores),\ exam\_score(exam\_score)\ \{\};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \string~Student();}
+\DoxyCodeLine{00026\ \ \ \ \ Student(\textcolor{keyword}{const}\ Student\ \&other);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ Student\ \&operator=(\textcolor{keyword}{const}\ Student\ \&other);}
+\DoxyCodeLine{00029\ \ \ \ \ Student(Student\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00030\ \ \ \ \ Student\ \&operator=(Student\ \&\&other)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&operator<<(std::ostream\ \&os,\ \textcolor{keyword}{const}\ Student\ \&student);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\ \&operator>>(std::istream\ \&is,\ Student\ \&student);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<int>\ get\_hw\_scores()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_exam\_score()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ get\_final\_score\_avg()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{double}\ get\_final\_score\_med()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_hw\_scores(std::vector<int>\ hw\_scores);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_exam\_score(\textcolor{keywordtype}{int}\ exam\_score);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_final\_score\_avg(\textcolor{keywordtype}{double}\ final\_score\_avg);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_final\_score\_med(\textcolor{keywordtype}{double}\ final\_score\_med);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ push\_hw\_score(\textcolor{keywordtype}{int}\ hw\_score);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ disallow\_cval\_mod();}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ get\_full\_name()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STUDENT\_H}}
+
+\end{DoxyCode}

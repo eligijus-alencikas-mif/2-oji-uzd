@@ -1,0 +1,30 @@
+\doxysection{cl\+\_\+students.\+h}
+\hypertarget{cl__students_8h_source}{}\label{cl__students_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CL\_STUDENTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CL\_STUDENTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}generator.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}inputs.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}student.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ std::numeric\_limits<int>\ int\_lim;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCL__Students}{CL\_Students}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Student>\ get\_user\_input(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \&generate\_names,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \&generate\_grades);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ gen\_names(\mbox{\hyperlink{classStudent}{Student}}\ \&student);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CL\_names(\mbox{\hyperlink{classStudent}{Student}}\ \&student,\ \textcolor{keywordtype}{int}\ students\_size);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ gen\_grades(\mbox{\hyperlink{classStudent}{Student}}\ \&student,\ \textcolor{keywordtype}{int}\ students\_size);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ CL\_grades(\mbox{\hyperlink{classStudent}{Student}}\ \&student,\ \textcolor{keywordtype}{int}\ students\_size);}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CL\_STUDENTS\_H}}
+
+\end{DoxyCode}

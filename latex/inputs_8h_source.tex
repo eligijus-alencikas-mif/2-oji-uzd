@@ -1,0 +1,26 @@
+\doxysection{inputs.\+h}
+\hypertarget{inputs_8h_source}{}\label{inputs_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INPUTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INPUTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ }std::cin;}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ }std::cout;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{typedef}\ std::numeric\_limits<int>\ int\_lim;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCLInputs}{CLInputs}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ numInput(\textcolor{keyword}{const}\ std::string\ \&prompt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ limit\_max\ =\ int\_lim::max(),}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ limit\_min\ =\ int\_lim::min());}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ strInput(\textcolor{keyword}{const}\ std::string\ \&prompt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ limit\_max\ =\ int\_lim::max(),}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ limit\_min\ =\ int\_lim::min());}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INPUTS\_H}}
+
+\end{DoxyCode}

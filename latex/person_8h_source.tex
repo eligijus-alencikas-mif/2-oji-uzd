@@ -1,0 +1,34 @@
+\doxysection{person.\+h}
+\hypertarget{person_8h_source}{}\label{person_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PERSON\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PERSON\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }Person}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::string\ f\_name,\ l\_name;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ Person(std::string\ f\_name,\ std::string\ l\_name)\ :\ f\_name(f\_name),\ l\_name(l\_name)\ \{\};}
+\DoxyCodeLine{00013\ \ \ \ \ Person()\ :\ f\_name(\textcolor{stringliteral}{"{}"{}}),\ l\_name(\textcolor{stringliteral}{"{}"{}})\ \{\};}
+\DoxyCodeLine{00014\ \ \ \ \ \string~Person()}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ f\_name.clear();}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ l\_name.clear();}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ get\_f\_name()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ f\_name;\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ get\_l\_name()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ l\_name;\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_f\_name(std::string\ f\_name)\ \{\ this-\/>f\_name\ =\ f\_name;\ \};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_l\_name(std::string\ l\_name)\ \{\ this-\/>l\_name\ =\ l\_name;\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ get\_full\_name()\ =\ 0;}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PERSON\_H}}
+
+\end{DoxyCode}
