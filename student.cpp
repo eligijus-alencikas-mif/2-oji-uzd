@@ -117,16 +117,6 @@ std::istream &operator>>(std::istream &is, Student &student)
     return is;
 };
 
-std::string Student::get_f_name() const
-{
-    return f_name;
-};
-
-// std::string Student::get_l_name() const
-// {
-//     return l_name;
-// };
-
 std::vector<int> Student::get_hw_scores() const
 {
     return hw_scores;
@@ -173,4 +163,9 @@ void Student::push_hw_score(int hw_score)
 void Student::disallow_cval_mod()
 {
     allow_cval_mod = false;
+};
+
+std::string Student::get_full_name()
+{
+    return f_name + " " + l_name;
 };

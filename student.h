@@ -33,8 +33,8 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Student &student);
     friend std::istream &operator>>(std::istream &is, Student &student);
 
-    std::string get_f_name() const;
-    std::string get_l_name() const;
+    // std::string get_f_name() const;
+    // std::string get_l_name() const;
     std::vector<int> get_hw_scores() const;
     int get_exam_score() const;
     double get_final_score_avg() const;
@@ -45,6 +45,7 @@ public:
     void set_final_score_med(double final_score_med);
     void push_hw_score(int hw_score);
     void disallow_cval_mod();
+    std::string get_full_name() override;
 };
 
 #endif // STUDENT_H
