@@ -4,6 +4,11 @@
 #include <vector>
 #include <string>
 #include "person.h"
+#include "constant_definitions.h"
+#include <vector>
+#include <string>
+#include <iostream>
+#include <limits>
 
 class Student : public Person
 {
@@ -17,22 +22,23 @@ private:
 
 public:
     Student(std::string f_name = "", std::string l_name = "", std::vector<int> hw_scores = {}, int exam_score = 0) : Person(f_name, l_name), hw_scores(hw_scores), exam_score(exam_score) {};
-    
+
     ~Student();
     Student(const Student &other);
 
     Student &operator=(const Student &other);
-    Student (Student &&other) noexcept; 
+    Student(Student &&other) noexcept;
     Student &operator=(Student &&other) noexcept;
 
-    // std::string get_f_name() const;
-    // std::string get_l_name() const;
+    friend std::ostream &operator<<(std::ostream &os, const Student &student);
+    friend std::istream &operator>>(std::istream &is, Student &student);
+
+    std::string get_f_name() const;
+    std::string get_l_name() const;
     std::vector<int> get_hw_scores() const;
     int get_exam_score() const;
     double get_final_score_avg() const;
     double get_final_score_med() const;
-    // void set_f_name(std::string f_name);
-    // void set_l_name(std::string l_name);
     void set_hw_scores(std::vector<int> hw_scores);
     void set_exam_score(int exam_score);
     void set_final_score_avg(double final_score_avg);
