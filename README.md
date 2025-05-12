@@ -27,6 +27,18 @@ Klaidos pataisymas
 ## V1.0 pradinis relizas
 Sukurtos papildomai dvi programos veikimo versijos, papildytas README programos veikimo spartos matmenimis ir testavimo detalėmis
 
+## V1.1
+Studentas perkeltas į klasę
+
+## V1.2
+Relizuota "Rule of five" ir įvesties/išvesties operatorius Student klasėje
+
+## V1.5
+Sukurta bazinė klasė žmogus(Person) ir pritaikyta Studnet klasei
+
+## V2.0
+Sukurti Doxygen HTML ir PDF dokumentacija, pridėti unit testai naudojant gtest
+
 # Naudojimos instrukcija
 
 * Paleidimas: Nueiti į norimo naudojimo konteinerio build aplankalą ir paleisti programą "1-oji-uzduotis"
