@@ -25,3 +25,26 @@ T Vector<T>::pop_back()
     }
     throw std::out_of_range("pop_back() called on empty vector");
 }
+
+template <typename T>
+void Vector<T>::clear()
+{
+    size = 0;
+}
+
+template <typename T>
+void Vector<T>::resize(size_t new_capacity)
+{
+    if (new_capacity < size)
+    {
+        capacity = new_capacity;
+        size = new_capacity;
+    }
+    std::unique_ptr<T> new_data(new T[new_capacity]);
+    for (size_t i = 0; i < size; ++i)
+    {
+        new_data[i] = data[i];
+    }
+    data.swap(new_data);
+    capacity = new_capacity;
+}

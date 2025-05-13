@@ -16,5 +16,9 @@ public:
 
     void push_back(const T &value);
     T pop_back();
+    void clear();
+    void resize(size_t new_capacity);
+    void erase(size_t index);
+    void insert(size_t index, const T &value);
 };
 #endif // VECTOR_HPP
