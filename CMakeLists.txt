@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(2-oji-uzd)
+project(my_vector)
 
 set(GOOGLETEST_VERSION 1.15.2)
 set(CMAKE_CXX_STANDARD 17)
@@ -12,17 +12,7 @@ add_subdirectory(googletest)
 include_directories(googletest/include)
 
 add_executable(mytests 
-    mytests.cpp
-    cl_students.cpp
-    file_gen.cpp
-    generator.cpp
-    output_students.cpp
-    read_students.cpp
-    students_calc.cpp
-    timer.cpp
-    student.cpp
-    inputs.cpp
-    student_test.cpp
+    test/main.cpp
 )
 
 target_link_libraries(mytests PRIVATE gtest)
@@ -32,21 +22,12 @@ include(GoogleTest)
 gtest_discover_tests(mytests)
 
 # Add the executable
-add_executable(2-oji-uzd
+add_executable(my_vector
     main.cpp
-    cl_students.cpp
-    file_gen.cpp
-    generator.cpp
-    output_students.cpp
-    read_students.cpp
-    students_calc.cpp
-    timer.cpp
-    student.cpp
-    inputs.cpp
-    student_test.cpp
+    vector.cpp
 )
 
 # Include directories
-target_include_directories(2-oji-uzd PRIVATE
+target_include_directories(my_vector PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
