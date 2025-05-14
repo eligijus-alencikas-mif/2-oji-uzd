@@ -3,7 +3,7 @@
 bool StudentTest::test_destructor()
 {
     Student *student;
-    new Student("John", "Doe", {9, 8, 5}, 3);
+    student = new Student("John", "Doe", {9, 8, 5}, 3);
     delete student;
     return true;
 }
