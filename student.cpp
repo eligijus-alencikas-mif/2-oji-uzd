@@ -57,6 +57,8 @@ Student::Student(Student &&other) noexcept
     this->final_score_avg = other.final_score_avg;
     this->final_score_med = other.final_score_med;
     this->allow_cval_mod = other.allow_cval_mod;
+    other.~Student();
+
 };
 
 // Move assignment operator
@@ -72,6 +74,8 @@ Student &Student::operator=(Student &&other) noexcept
         this->final_score_med = other.final_score_med;
         this->allow_cval_mod = other.allow_cval_mod;
     }
+    other.~Student();
+
     return *this;
 };
 
