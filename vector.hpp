@@ -20,5 +20,6 @@ public:
     void resize(size_t new_capacity);
     void erase(size_t index);
     void insert(size_t index, const T &value);
+    T at(const size_t index);
 };
 #endif // VECTOR_HPP

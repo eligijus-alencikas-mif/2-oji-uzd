@@ -48,3 +48,45 @@ void Vector<T>::resize(size_t new_capacity)
     data.swap(new_data);
     capacity = new_capacity;
 }
+
+template <typename T>
+void Vector<T>::erase(size_t index)
+{
+    if (index < size)
+    {
+        for (size_t i = index; i < size - 1; ++i)
+        {
+            data[i] = data[i + 1];
+        }
+        --size;
+    }
+    else
+    {
+        throw std::out_of_range("erase() index out of range");
+    }
+}
+
+template <typename T>
+void Vector<T>::insert(size_t index, const T &value)
+{
+    if (index < size)
+    {
+        size++;
+
+        for (size_t i = index; i < size + 1; ++i)
+        {
+            data[i + 1] = data[i];
+        }
+    }
+}
+
+template <typename T>
+T Vector<T>::at(size_t index)
+{
+    if (index < size)
+    {
+        return data[index];
+    }
+
+    throw std::out_of_range("at() index out of range");
+}
