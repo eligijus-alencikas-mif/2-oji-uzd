@@ -39,6 +39,15 @@ public:
         return *this;
     }
 
+    void assign(const size_t count, const T &value)
+    {
+        this->resize(count);
+        for (size_t i = 0; i < count; i++)
+        {
+            data[i] = value;
+        }
+    }
+
     void push_back(const T &value)
     {
         if (size >= capacity)

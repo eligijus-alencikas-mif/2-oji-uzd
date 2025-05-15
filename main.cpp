@@ -18,12 +18,14 @@ int main(int argc, char **argv)
         my_vector2.push_back(i + 1);
     }
 
+    my_vector.assign(5, 10);
+
     std::cout << my_vector.get_size() << std::endl;
     std::cout << my_vector.get_capacity() << std::endl;
     std::cout << my_vector2.get_size() << std::endl;
     std::cout << my_vector2.get_capacity() << std::endl;
 
-    for (auto element : my_vector2)
+    for (auto element : my_vector)
     {
         std::cout << element << " ";
     }
