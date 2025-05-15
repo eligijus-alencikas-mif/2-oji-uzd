@@ -1,7 +1,7 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 #include <memory>
-#include <iostream>
+#include <limits>
 
 template <typename T>
 class Vector
@@ -37,6 +37,40 @@ public:
             }
         }
         return *this;
+    }
+
+    bool operator==(const Vector<T> &other)
+    {
+        if (size != other.size)
+        {
+            return false;
+        }
+
+        for (size_t i = 0; i < size; i++)
+        {
+            if (data[i] != other.data[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool operator!=(const Vector<T> &other)
+    {
+        if (size != other.size)
+        {
+            return true;
+        }
+
+        for (size_t i = 0; i < size; i++)
+        {
+            if (data[i] != other.data[i])
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void assign(const size_t count, const T &value)
@@ -211,6 +245,16 @@ public:
     T *get_data()
     {
         return data.get();
+    }
+
+    bool empty()
+    {
+        return size == 0;
+    }
+
+    size_t max_size()
+    {
+        return std::numeric_limits<size_t>::max();
     }
 };
 #endif // VECTOR_HPP
