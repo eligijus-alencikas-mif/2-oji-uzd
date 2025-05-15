@@ -8,11 +8,36 @@ class Vector
 {
     size_t size;
     size_t capacity;
-    std::unique_ptr<T> data;
+    std::unique_ptr<T[]> data;
 
 public:
     Vector() : size(0), capacity(1), data(new T[1]) {}
     ~Vector() { data.release(); }
+
+    T &operator[](const size_t index)
+    {
+        if (index < size)
+        {
+            return data[index];
+        }
+
+        throw std::out_of_range("operator[] index out of range");
+    }
+
+    Vector<T> &operator=(const Vector<T> &other)
+    {
+        if (this != &other)
+        {
+            size = other.size;
+            capacity = other.capacity;
+            data.reset(new T[capacity]);
+            for (size_t i = 0; i < size; i++)
+            {
+                data[i] = other.data[i];
+            }
+        }
+        return *this;
+    }
 
     void push_back(const T &value)
     {
@@ -20,7 +45,7 @@ public:
         {
             capacity = (capacity == 0) ? 1 : capacity * 2;
             std::unique_ptr<T[]> new_data(new T[capacity]);
-            for (size_t i = 0; i < size; ++i)
+            for (size_t i = 0; i < size; i++)
             {
                 new_data[i] = data[i];
             }
@@ -28,6 +53,7 @@ public:
         }
         data[size++] = value;
     }
+
     T pop_back()
     {
         if (size > 0)
@@ -44,15 +70,36 @@ public:
         data.reset(new T[capacity]);
     }
 
-    void resize(size_t new_capacity)
+    void resize(size_t new_size, const T &value = {})
+    {
+        if (new_size > capacity)
+        {
+            capacity = new_size;
+        }
+
+        std::unique_ptr<T[]> new_data(new T[capacity]);
+        for (size_t i = 0; i < size; i++)
+        {
+            new_data[i] = data[i];
+        }
+        for (size_t i = size; i < new_size; i++)
+        {
+            new_data[i] = value;
+        }
+
+        size = new_size;
+        data.swap(new_data);
+    }
+
+    void reserve(size_t new_capacity)
     {
         if (new_capacity < size)
         {
-            capacity = new_capacity;
-            size = new_capacity;
+            throw std::out_of_range("reserve() new capacity is less than current size");
         }
-        std::unique_ptr<T> new_data(new T[new_capacity]);
-        for (size_t i = 0; i < size; ++i)
+
+        std::unique_ptr<T[]> new_data(new T[new_capacity]);
+        for (size_t i = 0; i < size; i++)
         {
             new_data[i] = data[i];
         }
@@ -64,20 +111,46 @@ public:
     {
         if (index < size)
         {
-            for (size_t i = index; i < size - 1; ++i)
+            for (size_t i = index; i < size - 1; i++)
             {
                 data[i] = data[i + 1];
             }
-            --size;
+            size--;
         }
         else
         {
             throw std::out_of_range("erase() index out of range");
         }
     }
-    void insert(size_t index, const T &value){
 
+    void insert(size_t index, const T &value)
+    {
+        if (index < size)
+        {
+            if (size >= capacity)
+            {
+                capacity = (capacity == 0) ? 1 : capacity * 2;
+                std::unique_ptr<T[]> new_data(new T[capacity]);
+                for (size_t i = 0; i < size; i++)
+                {
+                    new_data[i] = data[i];
+                }
+                data.swap(new_data);
+            }
+
+            for (size_t i = size - 1; i >= index; i--)
+            {
+                data[i + 1] = data[i];
+            }
+            size++;
+            data[index] = value;
+        }
+        else
+        {
+            throw std::out_of_range("insert() index out of range");
+        }
     }
+
     T at(const size_t index)
     {
         if (index < size)
@@ -86,6 +159,49 @@ public:
         }
 
         throw std::out_of_range("at() index out of range");
+    }
+
+    void shrink_to_fit()
+    {
+        std::unique_ptr<T[]> new_data(new T[size]);
+        for (size_t i = 0; i < size; i++)
+        {
+            new_data[i] = data[i];
+        }
+        data.swap(new_data);
+        capacity = size;
+    }
+
+    void swap(Vector<T> &other)
+    {
+        std::swap(size, other.size);
+        std::swap(capacity, other.capacity);
+        data.swap(other.data);
+    }
+
+    size_t get_size()
+    {
+        return size;
+    }
+
+    size_t get_capacity()
+    {
+        return capacity;
+    }
+
+    T *begin()
+    {
+        return data.get();
+    }
+
+    T *end()
+    {
+        return data.get() + size;
+    }
+
+    T *get_data()
+    {
+        return data.get();
     }
 };
 #endif // VECTOR_HPP

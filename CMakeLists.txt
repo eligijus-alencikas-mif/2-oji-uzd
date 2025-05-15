@@ -24,7 +24,6 @@ gtest_discover_tests(mytests)
 # Add the executable
 add_executable(my_vector
     main.cpp
-    vector.cpp
 )
 
 # Include directories
