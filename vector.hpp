@@ -12,7 +12,12 @@ class Vector
 
 public:
     Vector() : size(0), capacity(1), data(new T[1]) {}
-    ~Vector() { data.release(); }
+    ~Vector()
+    {
+        size = 0;
+        capacity = 0;
+        data.release();
+    }
 
     Vector(const Vector<T> &other)
     {
