@@ -14,7 +14,7 @@ public:
     Vector() : size(0), capacity(1), data(new T[1]) {}
     ~Vector() { data.release(); }
 
-    Vector::Vector(const Vector<T> &other)
+    Vector(const Vector<T> &other)
     {
         size = other.size;
         capacity = other.capacity;
@@ -38,6 +38,13 @@ public:
             }
         }
         return *this;
+    }
+
+    Vector(Vector<T> &&other) noexcept
+    {
+        size = std::move(other.size);
+        capacity = std::move(other.capacity);
+        data = std::move(other.data);
     }
 
     T &operator[](const size_t index)
