@@ -1,4 +1,12 @@
 #include <gtest/gtest.h>
+#include "../vector.hpp"
+
+TEST(VectorTest, ConstructorTest)
+{
+    Vector<int> my_vector;
+    EXPECT_EQ(my_vector.get_size(), 0);
+    EXPECT_EQ(my_vector.get_capacity(), 1);
+}
 
 TEST(HelloWorldTest, BasicAssertions)
 {
