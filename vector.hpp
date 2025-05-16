@@ -14,14 +14,15 @@ public:
     Vector() : size(0), capacity(1), data(new T[1]) {}
     ~Vector() { data.release(); }
 
-    T &operator[](const size_t index)
+    Vector::Vector(const Vector<T> &other)
     {
-        if (index < size)
+        size = other.size;
+        capacity = other.capacity;
+        data.reset(new T[capacity]);
+        for (size_t i = 0; i < size; i++)
         {
-            return data[index];
+            data[i] = other.data[i];
         }
-
-        throw std::out_of_range("operator[] index out of range");
     }
 
     Vector<T> &operator=(const Vector<T> &other)
@@ -37,6 +38,16 @@ public:
             }
         }
         return *this;
+    }
+
+    T &operator[](const size_t index)
+    {
+        if (index < size)
+        {
+            return data[index];
+        }
+
+        throw std::out_of_range("operator[] index out of range");
     }
 
     bool operator==(const Vector<T> &other)
