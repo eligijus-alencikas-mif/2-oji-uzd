@@ -47,6 +47,17 @@ public:
         data = std::move(other.data);
     }
 
+    Vector<T> &operator=(Vector<T> &&other) noexcept
+    {
+        if (this != &other)
+        {
+            size = std::move(other.size);
+            capacity = std::move(other.capacity);
+            data = std::move(other.data);
+        }
+        return *this;
+    }
+
     T &operator[](const size_t index)
     {
         if (index < size)
