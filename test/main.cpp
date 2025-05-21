@@ -98,6 +98,8 @@ TEST(VectorTest, AtOperatorTest)
 
     EXPECT_EQ(my_vector.at(0), 1);
     EXPECT_EQ(my_vector.at(1), 2);
+    my_vector.at(0) = 3;
+    EXPECT_EQ(my_vector.at(0), 3);
     EXPECT_THROW({ my_vector.at(2); }, std::out_of_range);
 }
 
