@@ -328,6 +328,24 @@ TEST(VectorTest, BeginEndTest)
     EXPECT_EQ(*(my_vector.end() - 1), 3);
 }
 
+TEST(VectorTest, FrontTest)
+{
+    Vector<int> my_vector;
+    my_vector.push_back(1);
+    my_vector.push_back(2);
+
+    EXPECT_EQ(my_vector.front(), 1);
+}
+
+TEST(VectorTest, BackTest)
+{
+    Vector<int> my_vector;
+    my_vector.push_back(1);
+    my_vector.push_back(2);
+
+    EXPECT_EQ(my_vector.back(), 2);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
