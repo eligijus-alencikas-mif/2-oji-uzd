@@ -272,13 +272,15 @@ TEST(VectorTest, SwapTest)
     Vector<int> other_vector;
     other_vector.push_back(3);
     other_vector.push_back(4);
+    other_vector.push_back(5);
 
     my_vector.swap(other_vector);
 
-    EXPECT_EQ(my_vector.get_size(), 2);
-    EXPECT_EQ(my_vector.get_capacity(), 2);
+    EXPECT_EQ(my_vector.get_size(), 3);
+    EXPECT_EQ(my_vector.get_capacity(), 4);
     EXPECT_EQ(my_vector.at(0), 3);
     EXPECT_EQ(my_vector.at(1), 4);
+    EXPECT_EQ(my_vector.at(2), 5);
 
     EXPECT_EQ(other_vector.get_size(), 2);
     EXPECT_EQ(other_vector.get_capacity(), 2);
@@ -320,9 +322,10 @@ TEST(VectorTest, BeginEndTest)
     Vector<int> my_vector;
     my_vector.push_back(1);
     my_vector.push_back(2);
+    my_vector.push_back(3);
 
     EXPECT_EQ(*my_vector.begin(), 1);
-    EXPECT_EQ(*(my_vector.end() - 1), 2);
+    EXPECT_EQ(*(my_vector.end() - 1), 3);
 }
 
 int main(int argc, char **argv)
