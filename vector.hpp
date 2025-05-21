@@ -228,7 +228,7 @@ public:
         }
     }
 
-    T at(const size_t index)
+    T &at(const size_t index)
     {
         if (index < size)
         {
@@ -254,6 +254,24 @@ public:
         std::swap(size, other.size);
         std::swap(capacity, other.capacity);
         data.swap(other.data);
+    }
+
+    T &front()
+    {
+        if (size > 0)
+        {
+            return data[0];
+        }
+        throw std::out_of_range("front() called on empty vector");
+    }
+
+    T &back()
+    {
+        if (size > 0)
+        {
+            return data[size - 1];
+        }
+        throw std::out_of_range("back() called on empty vector");
     }
 
     size_t get_size()
