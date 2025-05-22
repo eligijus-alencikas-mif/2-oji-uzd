@@ -33,7 +33,7 @@ std::cout << my_vector.pop_back() << std::endl;
 
 ### at()
 
-Gražina nuorodą (refrence) į masyvo elementą nurodytame indekse. Jei indeksas už masyvo ribų iššaukiamas erroras
+Gražina nuorodą (refrence) į masyvo elementą nurodytame indekse. Jei indeksas už masyvo ribų išmetamas erroras
 
 ```c++
 Vector<int> my_vector;
@@ -65,7 +65,7 @@ std::cout << my_vector.size() << std::endl;
 
 ### capacity()
 
-Gražina reservuotą elementų skaičių
+Gražina reservuotą masyvo elementų skaičių
 
 ```c++
 Vector<int> my_vector;
