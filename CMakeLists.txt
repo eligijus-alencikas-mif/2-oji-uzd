@@ -26,6 +26,10 @@ add_executable(my_vector
     main.cpp
 )
 
+add_executable(vector_speedtest
+    test/speedtest.cpp
+)
+
 # Include directories
 target_include_directories(my_vector PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
