@@ -8,10 +8,14 @@ int main(int argc, char *argv[])
     size_t size = 10000;
     size_t num_of_tests = 10;
 
-    std::cout << "Number of tests to get average: " << num_of_tests << std::endl;
+    std::cout << "\nCustom vector and std::vector speed comparison test\n\n";
+    std::cout << "Number of tests run for average: " << num_of_tests << std::endl;
 
     for (size_t multiplier = 1; multiplier <= 10000; multiplier *= 10)
     {
+        size_t std_vector_resize = 0;
+        size_t custom_vector_resize = 0;
+
         std::cout << "----------------------------------------" << std::endl;
         std::cout << "Testing with size: " << size * multiplier << std::endl;
 
@@ -27,7 +31,13 @@ int main(int argc, char *argv[])
             std::vector<int> std_vector;
 
             for (size_t i = 0; i < size * multiplier; ++i)
+            {
+                if (std_vector.size() == std_vector.capacity())
+                {
+                    std_vector_resize++;
+                }
                 std_vector.push_back(i);
+            }
 
             auto end = std::chrono::high_resolution_clock::now();
             elapsed = end - start;
@@ -37,16 +47,22 @@ int main(int argc, char *argv[])
 
             start = std::chrono::high_resolution_clock::now();
 
-            Vector<int> my_vector;
+            Vector<int> custom_vector;
 
             for (size_t i = 0; i < size * multiplier; ++i)
-                my_vector.push_back(i);
+            {
+                if (custom_vector.get_size() == custom_vector.get_capacity())
+                {
+                    custom_vector_resize++;
+                }
+                custom_vector.push_back(i);
+            }
 
             end = std::chrono::high_resolution_clock::now();
             elapsed = end - start;
             my_vec_sizes.push_back(elapsed);
 
-            my_vector.clear();
+            custom_vector.clear();
         }
 
         double std_vec_avg = 0;
@@ -64,6 +80,8 @@ int main(int argc, char *argv[])
         my_vec_avg /= my_vec_sizes.size();
         std::cout << "Average time for std::vector: " << std_vec_avg << " seconds\n";
         std::cout << "Average time for custom Vector: " << my_vec_avg << " seconds\n";
+        std::cout << "Resize calls for std::vector: " << std_vector_resize << std::endl;
+        std::cout << "Resize calls for custom Vector: " << custom_vector_resize << std::endl;
     }
 
     std::cout << "----------------------------------------" << std::endl;
