@@ -256,7 +256,7 @@ public:
         data.swap(other.data);
     }
 
-    T &front()
+    T &front() const
     {
         if (size > 0)
         {
@@ -265,7 +265,7 @@ public:
         throw std::out_of_range("front() called on empty vector");
     }
 
-    T &back()
+    T &back() const
     {
         if (size > 0)
         {
@@ -274,37 +274,37 @@ public:
         throw std::out_of_range("back() called on empty vector");
     }
 
-    size_t get_size()
+    size_t get_size() const
     {
         return size;
     }
 
-    size_t get_capacity()
+    size_t get_capacity() const
     {
         return capacity;
     }
 
-    T *begin()
+    T *begin() const
     {
         return data.get();
     }
 
-    T *end()
+    T *end() const
     {
         return data.get() + size;
     }
 
-    T *get_data()
+    T *get_data() const
     {
         return data.get();
     }
 
-    bool empty()
+    bool empty() const
     {
         return size == 0;
     }
 
-    size_t max_size()
+    size_t max_size() const
     {
         return std::numeric_limits<size_t>::max();
     }

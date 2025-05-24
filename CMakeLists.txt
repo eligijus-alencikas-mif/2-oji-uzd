@@ -44,16 +44,19 @@ add_executable(1.5v
     std_vector/student_test.cpp
 )
 
-# add_executable(1.5v_custom
-#     custom_vector/main.cpp
-#     custom_vector/cl_students.cpp
-#     custom_vector/file_gen.cpp
-#     custom_vector/generator.cpp
-#     custom_vector/output_students.cpp
-#     custom_vector/read_students.cpp
-#     custom_vector/students_calc.cpp
-#     custom_vector/timer.cpp
-# )
+add_executable(1.5v_custom
+    custom_vector/main.cpp
+    custom_vector/cl_students.cpp
+    custom_vector/file_gen.cpp
+    custom_vector/generator.cpp
+    custom_vector/output_students.cpp
+    custom_vector/read_students.cpp
+    custom_vector/students_calc.cpp
+    custom_vector/timer.cpp
+    custom_vector/student.cpp
+    custom_vector/inputs.cpp
+    custom_vector/student_test.cpp
+)
 
 # Include directories
 target_include_directories(my_vector PRIVATE
