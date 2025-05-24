@@ -30,16 +30,19 @@ add_executable(vector_speedtest
     test/speedtest.cpp
 )
 
-# add_executable(1.5v
-#     std_vector/main.cpp
-#     std_vector/cl_students.cpp
-#     std_vector/file_gen.cpp
-#     std_vector/generator.cpp
-#     std_vector/output_students.cpp
-#     std_vector/read_students.cpp
-#     std_vector/students_calc.cpp
-#     std_vector/timer.cpp
-# )
+add_executable(1.5v
+    std_vector/main.cpp
+    std_vector/cl_students.cpp
+    std_vector/file_gen.cpp
+    std_vector/generator.cpp
+    std_vector/output_students.cpp
+    std_vector/read_students.cpp
+    std_vector/students_calc.cpp
+    std_vector/timer.cpp
+    std_vector/student.cpp
+    std_vector/inputs.cpp
+    std_vector/student_test.cpp
+)
 
 # add_executable(1.5v_custom
 #     custom_vector/main.cpp
