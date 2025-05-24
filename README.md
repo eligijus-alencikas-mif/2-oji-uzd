@@ -171,10 +171,11 @@ Sukurti Doxygen HTML ir PDF dokumentacija, pridėti unit testai naudojant gtest
   * Duomenų nuskaitymas iš failų į atitinkamą konteinerį
   * Studentų rūšiavimas didėjimo tvarką konteineryje
   * Studentų skirstymas į dvi grupes/kategorijas
-* Studentams saugoti bus naudojami 3 skirtingi konteineriai:
+* Studentams saugoti bus naudojami 4 skirtingi konteineriai:
   * `std::vector`
   * `std::list`
   * `std::deque`
+  * Mano sukurta `Vector` klasė
 
 ## Naudojant `std::vector`
 
