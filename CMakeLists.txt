@@ -30,16 +30,27 @@ add_executable(vector_speedtest
     test/speedtest.cpp
 )
 
-add_executable(1.5v
-    std_vector/main.cpp
-    std_vector/cl_students.cpp
-    std_vector/file_gen.cpp
-    std_vector/generator.cpp
-    std_vector/output_students.cpp
-    std_vector/read_students.cpp
-    std_vector/students_calc.cpp
-    std_vector/timer.cpp
-)
+# add_executable(1.5v
+#     std_vector/main.cpp
+#     std_vector/cl_students.cpp
+#     std_vector/file_gen.cpp
+#     std_vector/generator.cpp
+#     std_vector/output_students.cpp
+#     std_vector/read_students.cpp
+#     std_vector/students_calc.cpp
+#     std_vector/timer.cpp
+# )
+
+# add_executable(1.5v_custom
+#     custom_vector/main.cpp
+#     custom_vector/cl_students.cpp
+#     custom_vector/file_gen.cpp
+#     custom_vector/generator.cpp
+#     custom_vector/output_students.cpp
+#     custom_vector/read_students.cpp
+#     custom_vector/students_calc.cpp
+#     custom_vector/timer.cpp
+# )
 
 # Include directories
 target_include_directories(my_vector PRIVATE
