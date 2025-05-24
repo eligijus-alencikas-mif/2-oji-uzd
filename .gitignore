@@ -12,3 +12,4 @@ kursiokai.txt
 !CMakeLists.txt
 !test/test_cases/*
 /.vscode
+!mysetup.exe
