@@ -2,15 +2,18 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 [Setup]
-AppName=OOP projektas
+AppName=Vardenis-Pavardenis
 AppVersion=3.0
 WizardStyle=modern
-DefaultDirName={autopf}\OOP projektas
-DefaultGroupName=OOP projektas
+DefaultDirName={commonpf64}\VU\Vardenis-Pavardenis
+DefaultGroupName=Vardenis-Pavardenis
 UninstallDisplayIcon={app}\1.5v_custom.exe
 Compression=lzma2
 SolidCompression=yes
 OutputDir=userdocs:IDK
+
+[Tasks]
+Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
 Source: ".\build\1.5v_custom.exe"; DestDir: "{app}"
@@ -18,4 +21,5 @@ Source: ".\build\10000.txt"; DestDir: "{app}"
 Source: ".\build\100000.txt"; DestDir: "{app}"
 
 [Icons]
-Name: "{group}\OOP projektas"; Filename: "{app}\1.5v_custom.exe"
+Name: "{group}\Vardenis-Pavardenis"; Filename: "{app}\1.5v_custom.exe"
+Name: {commondesktop}\Vardenis-Pavardenis; Filename: {app}\1.5v_custom.exe; Tasks: desktopicon
